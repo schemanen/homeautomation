@@ -13,8 +13,9 @@ taskHandeler = tasks.Tasks()
 """
 Schedules
 """
-schedule.every().day.at("07:15").do(taskHandeler.turnOnDevice, "christmastree")
-schedule.every(5).minutes.do(taskHandeler.blinkDevice, "christmastree", 10)
+schedule.every().day.at("07:15").do(taskHandeler.turnOnDevice, "tv")
+schedule.every().day.at("07:15").do(taskHandeler.blinkDevice, "christmastree", 10)
+schedule.every(1).minutes.do(taskHandeler.turnOnIfHome, "christmastree", "192.168.1.13")
 
 """
 Engine
